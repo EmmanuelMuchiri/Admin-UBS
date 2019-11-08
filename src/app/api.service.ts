@@ -5,13 +5,18 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
   providedIn: 'root'
 })
 export class ApiService {
-  url : string='https://jambopay.herokuapp.com/api/GetMerchant/';
-  httpHeaders = new HttpHeaders({'Content-Type': 'application/json'})
+  url : string='https://jambopay.herokuapp.com/api/GetMerchants/';
+  
+  billUrl: string ='https://jambopay.herokuapp.com/api/BillsDetails/';
 
 
   constructor(public http:HttpClient) { }
 
   getUsers(){
     return this.http.get<any[]>(this.url);
+  }
+
+  getBills(){
+    return this.http.get<any[]>(this.billUrl);
   }
 }

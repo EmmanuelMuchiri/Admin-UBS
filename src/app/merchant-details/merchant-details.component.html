@@ -1,0 +1,30 @@
+<table class=" table table-bordered">
+    <thead>
+        <tr>
+            <th>Merchant Number</th>
+            <th>Business Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Revenue Streams</th>
+            <th>Industry</th>
+            <th>Physical_address</th>
+            <th>Town</th>
+            <th>Join Date</th>
+        </tr>
+    </thead>
+    <tbody *ngFor='let user of users'>
+        <tr >
+            <td>{{user.id}}</td>
+            <td>{{user.Business_name}}</td>
+            <td>{{user.Email}}</td>
+            <td>{{user.Phone_number}}</td>
+            <td>{{user.Revestreams}}</td>
+            <td>{{user.Industry}}</td>
+
+            <td>{{user.Physical_address}}</td>
+            <td>{{user.Town}}</td>
+            <td>{{user.join_date}}</td>
+        </tr>
+    </tbody>
+</table>
+

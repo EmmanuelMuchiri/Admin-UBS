@@ -1,9 +1,9 @@
 {
-  "name": "project",
+  "name": "angular-routing",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.config.json",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -19,9 +19,8 @@
     "@angular/platform-browser": "~8.2.13",
     "@angular/platform-browser-dynamic": "~8.2.13",
     "@angular/router": "~8.2.13",
-    "cors": "^2.8.5",
+    "@ng-bootstrap/ng-bootstrap": "^5.1.2",
     "rxjs": "~6.4.0",
-    "rxjs-compat": "^6.5.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
