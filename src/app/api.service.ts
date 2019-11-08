@@ -9,6 +9,8 @@ export class ApiService {
   
   billUrl: string ='https://jambopay.herokuapp.com/api/BillsDetails/';
 
+  paymentsUrl: string = 'https://jambopay.herokuapp.com/api/GetPayments/';
+
 
   constructor(public http:HttpClient) { }
 
@@ -18,5 +20,9 @@ export class ApiService {
 
   getBills(){
     return this.http.get<any[]>(this.billUrl);
+  }
+
+  getPayments(){
+    return this.http.get<any[]>(this.paymentsUrl);
   }
 }

@@ -1,0 +1,26 @@
+<table class=" table table-bordered">
+    <thead>
+        <tr>
+            <th>Payment Number</th>
+            <th>Payers Name</th>
+            <th>Phone Phone</th>
+            <th>Narration</th>
+            <th>Amount</th>
+            <th>Pay Date</th>
+            <th>Bill Number</th>
+
+        </tr>
+    </thead>
+    <tbody *ngFor='let payment of payments'>
+        <tr >
+            <td>{{payment.id}}</td>
+            <td>{{payment.payers_name}}</td>
+            <td>{{payment.payers_phone}}</td>
+            <td>{{payment.narration}}</td>
+            <td>{{payment.amount}}</td>
+            <td>{{payment.pay_date}}</td>
+            <td>{{payment.bill_number}}</td>
+        </tr>
+    </tbody>
+</table>
+

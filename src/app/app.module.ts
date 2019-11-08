@@ -9,6 +9,7 @@ import { MerchantDetailsComponent } from './merchant-details/merchant-details.co
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { GetPaymentsComponent } from './get-payments/get-payments.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HomeComponent,
     BillsDetailsComponent,
-    MerchantDetailsComponent
+    MerchantDetailsComponent,
+    GetPaymentsComponent
   ],
   imports: [
     BrowserModule,

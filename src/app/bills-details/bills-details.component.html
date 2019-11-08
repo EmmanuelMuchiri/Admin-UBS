@@ -2,14 +2,14 @@
     <thead>
         <tr>
             <th>Bill Number</th>
-            <th>Business Name</th>
             <th>Revstreams</th>
-            <th>Customer Name</th>
-            <th>Customer Phone</th>
+            <th>Business Name</th>
             <th>Email</th>
             <th>Narrations</th>
             <th>Amount</th>
+            <th>Quantity</th>
             <th>Status</th>
+            <th>Bill Number</th>
         </tr>
     </thead>
     <tbody *ngFor='let bill of bills'>
@@ -17,12 +17,12 @@
             <td>{{bill.id}}</td>
             <td>{{bill.Revstreams}}</td>
             <td>{{bill.customer_name}}</td>
-            <td>{{bill.customer_phone}}</td>
             <td>{{bill.customer_email}}</td>
             <td>{{bill.narration}}</td>
             <td>{{bill.amount}}</td>
             <td>{{bill.quantity}}</td>
             <td>{{bill.status}}</td>
+            <td>{{bill.bill_id}}</td>
         </tr>
     </tbody>
 </table>
