@@ -11,6 +11,8 @@ export class ApiService {
 
   paymentsUrl: string = 'https://jambopay.herokuapp.com/api/GetPayments/';
 
+  revenueStreamsUrl: string = 'https://jambopay.herokuapp.com/api/GetRevenueStreams/';
+
 
   constructor(public http:HttpClient) { }
 
@@ -24,5 +26,9 @@ export class ApiService {
 
   getPayments(){
     return this.http.get<any[]>(this.paymentsUrl);
+  }
+
+  getRevenueStreams(){
+    return this.http.get<any[]>(this.revenueStreamsUrl);
   }
 }

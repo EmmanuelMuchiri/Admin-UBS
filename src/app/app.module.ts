@@ -10,6 +10,11 @@ import { MerchantDetailsComponent } from './merchant-details/merchant-details.co
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { GetPaymentsComponent } from './get-payments/get-payments.component';
+import { RevenueStreamsComponent } from './revenue-streams/revenue-streams.component';
+import { FormsModule } from '@angular/forms';
+import { JwtModule } from '@auth0/angular-jwt';
+import { LoginComponent } from './_component/login/login.component';
+import { DashboardComponent } from './_component/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -18,13 +23,27 @@ import { GetPaymentsComponent } from './get-payments/get-payments.component';
     HomeComponent,
     BillsDetailsComponent,
     MerchantDetailsComponent,
-    GetPaymentsComponent
+    GetPaymentsComponent,
+    RevenueStreamsComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('access_token');
+        },
+        whitelistedDomains: ['localhost'],
+        blacklistedRoutes: ['localhost/auth/login']
+      }
+    })    
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
