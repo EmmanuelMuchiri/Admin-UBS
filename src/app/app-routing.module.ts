@@ -17,17 +17,12 @@ const routes: Routes = [
   { path: 'merchant-details', component: MerchantDetailsComponent},
   { path: 'revenue-streams', component: RevenueStreamsComponent },
   { path: 'payments-details', component: GetPaymentsComponent},
-  {
-    path: 'dashboard',
-    canActivate: [AuthGuard],
-    component: DashboardComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/login' },
+
+  { path: 'dashboard', canActivate: [AuthGuard],component: DashboardComponent },
+  { path: 'login', component: LoginComponent },
+
+  // { path: '', redirectTo: '/login', pathMatch: 'full' },
+  // { path: '**', redirectTo: '/login' },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 

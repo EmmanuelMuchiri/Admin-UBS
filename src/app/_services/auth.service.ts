@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class AuthService {
  
   // API path
-  basePath = 'https://my-site.com/server/';
+  basePath = 'http://127.0.0.1:8000/api/login/';
  
   constructor(
     private router: Router,
