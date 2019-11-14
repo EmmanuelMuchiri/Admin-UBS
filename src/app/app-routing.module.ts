@@ -8,6 +8,8 @@ import { RevenueStreamsComponent } from './revenue-streams/revenue-streams.compo
 import { AuthGuard } from './_guards/auth.guard';
 import { DashboardComponent } from './_component/dashboard/dashboard.component';
 import { LoginComponent } from './_component/login/login.component';
+import { GenerateBillComponent } from './generate-bill/generate-bill.component';
+;
 
 
 const routes: Routes = [
@@ -17,6 +19,9 @@ const routes: Routes = [
   { path: 'merchant-details', component: MerchantDetailsComponent},
   { path: 'revenue-streams', component: RevenueStreamsComponent },
   { path: 'payments-details', component: GetPaymentsComponent},
+  { path: 'generate-bill', component: GenerateBillComponent
+},
+
 
   { path: 'dashboard', canActivate: [AuthGuard],component: DashboardComponent },
   { path: 'login', component: LoginComponent },
