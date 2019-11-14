@@ -1,0 +1,23 @@
+<table class=" table table-bordered">
+        <thead>
+            <tr>
+                <th>revenueStream Number</th>
+                <th>Name</th>
+                <th>Revenue Description</th>
+                <th>Price</th>
+                <th>Industries</th>
+    
+            </tr>
+        </thead>
+        <tbody *ngFor='let revenueStream of revenueStreams'>
+            <tr >
+                <td>{{revenueStream.id}}</td>
+                <td>{{revenueStream.name}}</td>
+                <td>{{revenueStream.revenue_description}}</td>
+                <td>{{revenueStream.price}}</td>
+                <td>{{revenueStream.Industrys}}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    

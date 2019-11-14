@@ -6,24 +6,30 @@
 
   <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
     <ul class="navbar-nav mr-auto">
+
       <li class="nav-item active">
         <a class="nav-link" routerLink="" routerLinkActive="active">Home <span class="sr-only">(current)</span></a>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link" routerLink="bills-details" routerLinkActive="active">Bills Details</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="merchant-details" routerLinkActive="active">Merchant Details</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" routerLink="bills-details" routerLinkActive="active">Bills Details</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="revenue-streams" routerLinkActive="active">Revenue Streams</a>
+        </li>
+      <li class="nav-item">
         <a class="nav-link" routerLink="payments-details" routerLinkActive="active">Payments Details</a>
       </li>
+      <li class="nav-item">
+          <a class="nav-link" routerLink="generate-bill" routerLinkActive="active">Generate Bill</a>
+        </li>
      
     </ul>
   </div>
 </nav>
 <br>
-<div class="container">
+<div class="">
   <router-outlet></router-outlet>
 </div>
