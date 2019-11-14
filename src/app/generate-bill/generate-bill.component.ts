@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
   templateUrl: './generate-bill.component.html',
   styleUrls: ['./generate-bill.component.css']
 })
+
+
 export class GenerateBillComponent implements OnInit {
 
   @Input() newBill = { name: '', phone: 0, email: '', narration: '', generated_by: ''}
