@@ -10,7 +10,7 @@ export class RevenueStreamsComponent implements OnInit {
 
   revenueStreams: any[];
 
-  constructor(public apiservice:ApiService){
+  constructor(private apiservice:ApiService){
 
   }
 

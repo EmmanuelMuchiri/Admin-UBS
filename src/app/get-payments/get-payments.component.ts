@@ -11,7 +11,7 @@ export class GetPaymentsComponent implements OnInit {
 
   payments: any[];
 
-  constructor(public apiservice:ApiService){
+  constructor(private apiservice:ApiService){
 
   }
 
