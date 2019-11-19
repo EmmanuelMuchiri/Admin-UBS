@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable,  throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-import { Bill } from './postdataObj';
+import { Bill, Bills } from './postdataObj';
 
 
 @Injectable({
@@ -15,14 +15,16 @@ export class ApiService {
   
   billUrl: string ='https://jambopay.herokuapp.com/api/BillsDetails/';
 
-  paymentsUrl: string = 'https://jambopay.herokuapp.com/api/GetPayments/';
+  paymentsUrl: string = 'https://jambopay.herokuapp.com/api/GetPayments/' 
+  
+  // ('Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTczODI4NDY3LCJqdGkiOiJhMTU0YTY4NGM1ZjY0NGI5YWFiMTZkYzViYTVkNDI0NiIsInVzZXJfaWQiOjF9.yd8cOZ0BZ6u01hCDBq0uOae-rJqESOF8dGa_a8bytRk');
 
   revenueStreamsUrl: string = 'https://jambopay.herokuapp.com/api/GetRevenueStreams/';
 
   generateBillUrl: string = 'http://jambopay.herokuapp.com/api/GenerateBill/';
 
 
-  constructor(public http:HttpClient) { }
+  constructor(private http:HttpClient) { }
 
   // Http Options
   httpOptions = {
@@ -31,20 +33,37 @@ export class ApiService {
     })
   } 
 
+
   getUsers(){
-    return this.http.get<any[]>(this.url);
+    return this.http.get<any[]>(this.url, this.httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
   }
 
-  getBills(){
-    return this.http.get<any[]>(this.billUrl);
+  getBills(): Observable<Bills[]>{
+    return this.http.get<Bills[]>(this.billUrl)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
   }
 
   getPayments(){
-    return this.http.get<any[]>(this.paymentsUrl);
+    return this.http.get<any[]>(this.paymentsUrl, this.httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
   }
 
   getRevenueStreams(){
-    return this.http.get<any[]>(this.revenueStreamsUrl);
+    return this.http.get<any[]>(this.revenueStreamsUrl, this.httpOptions)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
   }
 
   generateBill(bill): Observable<Bill> {

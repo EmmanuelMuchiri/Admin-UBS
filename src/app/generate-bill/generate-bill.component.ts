@@ -15,13 +15,13 @@ export class GenerateBillComponent implements OnInit {
 
   @Input() newBill = { name: '', phone: 0, email: '', narration: '', generated_by: ''}
 
-    constructor(public apiservice:ApiService){ }
+    constructor(private apiservice:ApiService){ }
 
   ngOnInit() {
   }
 
 
-  addEmployee(dataBill) {
+  addBill(dataBill) {
     this.apiservice.generateBill(this.newBill).subscribe((data: {}) => {
     })
   }

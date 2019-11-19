@@ -13,7 +13,7 @@ export class MerchantDetailsComponent implements OnInit {
 
   users: any[];
 
-  constructor(public apiservice:ApiService){
+  constructor(private apiservice:ApiService){
 
   }
 

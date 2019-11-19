@@ -1,0 +1,13 @@
+mat-table {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+h2 {
+  text-align: center;
+}
+
+button {
+  margin-left: 80px;
+  width: 10%;
+}

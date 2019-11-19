@@ -25,6 +25,9 @@
       <li class="nav-item">
           <a class="nav-link" routerLink="generate-bill" routerLinkActive="active">Generate Bill</a>
         </li>
+        <li class="nav-item">
+          <a *ngIf="currentUser" class="nav-item nav-link" (click)="logout()">Logout</a>
+        </li>
      
     </ul>
   </div>

@@ -1,8 +1,9 @@
-export interface LoginResponse {
-    access_token: string;
-    data: any;
-    name: string;
-    status: string;
-    message: string;
+export class User {
+    id: number;
+    username: string;
+    password: string;
+    // firstName: string;
+    // lastName: string;
+    token?: string;
 }
  
