@@ -13,7 +13,7 @@ import { ApiService } from '../api.service';
 export class BillsDetailsComponent implements OnInit {
   
   dataSource = new BillsDataSource(this.apiservice);
-  displayedColumns = ['bill_id','Revstreams','customer_name','customer_phone','narration','subtotal','quantity','status'];
+  displayedColumns = ['bill_id','Revstreams','customer_name','customer_phone','narration','subtotal','quantity','status', 'generated_by'];
 
 
   constructor( private apiservice: ApiService) { }
@@ -33,4 +33,5 @@ connect():Observable<Bills[]>{
 }
 
 disconnect() {}
+
 }

@@ -1,3 +1,6 @@
+<main-nav></main-nav>
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" routerLink="">JP</a>
   <button class="navbar-toggler" type="button" (click)="toggleNavbar()" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,11 +31,11 @@
         <li class="nav-item">
           <a *ngIf="currentUser" class="nav-item nav-link" (click)="logout()">Logout</a>
         </li>
-     
     </ul>
   </div>
 </nav>
 <br>
+
 <div class="">
-  <router-outlet></router-outlet>
-</div>
+    <router-outlet></router-outlet>
+  </div>

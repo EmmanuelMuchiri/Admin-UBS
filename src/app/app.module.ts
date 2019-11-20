@@ -22,6 +22,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { ApiService } from './api.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -32,7 +39,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     GetPaymentsComponent,
     RevenueStreamsComponent,
     GenerateBillComponent,
-    LoginComponent
+    LoginComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +50,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     MaterialModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule   
+    ReactiveFormsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule   
   
   ],
   providers: [

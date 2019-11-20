@@ -1,25 +1,25 @@
-mat-table {
+ mat-table {
     width: 90%;
     margin: 20px auto;
+    font-size: 1em;
   }
 
-h2 {
+ h2 {
   text-align: center;
 }
 
 button {
   margin-left: 80px;
   width: 10%;
-}
+}  
 
 
 
-/* 
 
 
-body {
+/* body {
   font-family: 'Covered By Your Grace', cursive;
-  line-height: 1.25;
+  line-height: 1.5;
   
 }
 
@@ -34,7 +34,17 @@ body {
     font-size: 1em;
   }
   
-  
+  .mat-table .mat-header-cell {
+    border: 10px solid;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    background-color: red;
+  }
+ 
   .mat-table .mat-row {
     border-bottom: 5px solid #ddd;
     display: block;
@@ -48,9 +58,10 @@ body {
     font-weight: bold;
     height:30px;
     margin-bottom: 4%;
+    
   }
   .mat-table .mat-cell:before {
-    
+   
     content: attr(data-label);
     float: left;
     text-transform: uppercase;
