@@ -1,85 +1,52 @@
-  <!-- <table class=" table table-bordered">
-      <thead>
-          <tr>
-              <th>Bill Number</th>
-              <th>Revstreams</th>
-              <th>Business Name</th>
-              <th>Email</th>
-              <th>Narrations</th>
-              <th>Amount</th>
-              <th>Quantity</th>
-              <th>Status</th>
-              <th>Bill Number</th>
-          </tr>
-      </thead>
-      <tbody *ngFor='let bill of bills'>
-          <tr >
-              <td>{{bill.id}}</td>
-              <td>{{bill.Revstreams}}</td>
-              <td>{{bill.customer_name}}</td>
-              <td>{{bill.customer_email}}</td>
-              <td>{{bill.narration}}</td>
-              <td>{{bill.subtotal}}</td>
-              <td>{{bill.quantity}}</td>
-              <td>{{bill.status}}</td>
-              <td>{{bill.bill_id}}</td>
-          </tr>
-      </tbody>
-  </table> -->
-
-
 <h2>Bill Details</h2>
 
+<div class="mat-elevation-z8">
+
 <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef> Bill Number </mat-header-cell>
-      <mat-cell *matCellDef="let bill"> {{bill.id}} </mat-cell>
-    </ng-container>
-  
-    <ng-container matColumnDef="Revstreams">
-      <mat-header-cell *matHeaderCellDef> Revenue Streams </mat-header-cell>
-      <mat-cell *matCellDef="let bill"> {{bill.Revstreams}} </mat-cell>
-    </ng-container>
-  
-    <ng-container matColumnDef="customer_name">
-      <mat-header-cell *matHeaderCellDef> Business Name </mat-header-cell>
-      <mat-cell *matCellDef="let bill"> {{bill.customer_name}} </mat-cell>
-    </ng-container>
-  
-    <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
-      <mat-cell *matCellDef="let bill"> {{bill.customer_email}} </mat-cell>
-    </ng-container>
 
-    <ng-container matColumnDef="narration">
-        <mat-header-cell *matHeaderCellDef> Narrations </mat-header-cell>
-        <mat-cell *matCellDef="let bill"> {{bill.narration}} </mat-cell>
-      </ng-container>
+  <ng-container matColumnDef="bill_id">
+    <mat-header-cell *matHeaderCellDef> Bill Number </mat-header-cell>
+    <mat-cell *matCellDef="let bill"> {{bill.bill_id}} </mat-cell>
+  </ng-container>
 
-      <ng-container matColumnDef="subtotal">
-        <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
-        <mat-cell *matCellDef="let bill"> {{bill.subtotal}} </mat-cell>
-      </ng-container>
+  <ng-container matColumnDef="Revstreams">
+    <mat-header-cell *matHeaderCellDef> Revenue Streams </mat-header-cell>
+    <mat-cell *matCellDef="let bill"> {{bill.Revstreams}} </mat-cell>
+  </ng-container>
 
-      <ng-container matColumnDef="quantity">
-        <mat-header-cell *matHeaderCellDef> Quantity </mat-header-cell>
-        <mat-cell *matCellDef="let bill"> {{bill.quantity}} </mat-cell>
-      </ng-container>
+  <ng-container matColumnDef="customer_name">
+    <mat-header-cell *matHeaderCellDef> Business Name </mat-header-cell>
+    <mat-cell *matCellDef="let bill"> {{bill.customer_name}} </mat-cell>
+  </ng-container>
 
-      <ng-container matColumnDef="status">
-        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
-        <mat-cell *matCellDef="let bill"> {{bill.status}} </mat-cell>
-      </ng-container>
+  <ng-container matColumnDef="customer_phone">
+    <mat-header-cell *matHeaderCellDef> Phone </mat-header-cell>
+    <mat-cell *matCellDef="let bill"> {{bill.customer_phone}} </mat-cell>
+  </ng-container>
 
-      <ng-container matColumnDef="bill_id">
-        <mat-header-cell *matHeaderCellDef> Bill Number </mat-header-cell>
-        <mat-cell *matCellDef="let bill"> {{bill.bill_id}} </mat-cell>
-      </ng-container>
-  
-  
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
+  <ng-container matColumnDef="narration">
+    <mat-header-cell *matHeaderCellDef> Narrations </mat-header-cell>
+    <mat-cell *matCellDef="let bill"> {{bill.narration}} </mat-cell>
+  </ng-container>
 
-  <br>
-  <button mat-raised-button class="btn btn-primary">Download pdf</button>
+  <ng-container matColumnDef="subtotal">
+    <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+    <mat-cell *matCellDef="let bill"> {{bill.subtotal}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="quantity">
+    <mat-header-cell *matHeaderCellDef> Quantity </mat-header-cell>
+    <mat-cell *matCellDef="let bill"> {{bill.quantity}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+    <mat-cell *matCellDef="let bill"> {{bill.status}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+</div>
+<br>
+<button mat-raised-button class="btn btn-primary">Download pdf</button>

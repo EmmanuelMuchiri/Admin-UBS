@@ -6,19 +6,18 @@ import { MerchantDetailsComponent } from './merchant-details/merchant-details.co
 import { GetPaymentsComponent } from './get-payments/get-payments.component';
 import { RevenueStreamsComponent } from './revenue-streams/revenue-streams.component';
 import { GenerateBillComponent } from './generate-bill/generate-bill.component';
-;
 import { LoginComponent } from './login';
 
 import { AuthGuard } from './_helpers';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'bills-details', component: BillsDetailsComponent },
-  { path: 'merchant-details', component: MerchantDetailsComponent },
-  { path: 'revenue-streams', component: RevenueStreamsComponent },
-  { path: 'payments-details', component: GetPaymentsComponent },
-  { path: 'generate-bill', component: GenerateBillComponent },
+  { path: 'bills-details', component: BillsDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'merchant-details', component: MerchantDetailsComponent, canActivate: [AuthGuard] },
+  { path: 'revenue-streams', component: RevenueStreamsComponent, canActivate: [AuthGuard] },
+  { path: 'payments-details', component: GetPaymentsComponent, canActivate: [AuthGuard] },
+  { path: 'generate-bill', component: GenerateBillComponent, canActivate: [AuthGuard] },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 

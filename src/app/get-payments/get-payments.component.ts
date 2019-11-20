@@ -22,3 +22,4 @@ export class GetPaymentsComponent implements OnInit {
 
   }
 }
+
