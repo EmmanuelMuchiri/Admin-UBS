@@ -1,28 +1,49 @@
-<h2>Payment Details</h2>
 
-<table class=" table table-bordered">
-    <thead>
-        <tr>
-            <th>Payment Number</th>
-            <th>Payers Name</th>
-            <th>Phone Phone</th>
-            <th>Narration</th>
-            <th>Amount</th>
-            <th>Pay Date</th>
-            <th>Bill Number</th>
+ <h2>Payments Details</h2>
 
-        </tr>
-    </thead>
-    <tbody *ngFor='let payment of payments'>
-        <tr >
-            <td>{{payment.id}}</td>
-            <td>{{payment.payers_name}}</td>
-            <td>{{payment.payers_phone}}</td>
-            <td>{{payment.narration}}</td>
-            <td>{{payment.amount}}</td>
-            <td>{{payment.pay_date}}</td>
-            <td>{{payment.bill_number}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="mat-elevation-z8">
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> payment Number </mat-header-cell>
+    <mat-cell *matCellDef="let payment"> {{payment.id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="payers_name">
+    <mat-header-cell *matHeaderCellDef> Payers Name </mat-header-cell>
+    <mat-cell *matCellDef="let payment"> {{payment.payers_name}} </mat-cell>
+  </ng-container>
+  
+  <ng-container matColumnDef="payers_phone">
+    <mat-header-cell *matHeaderCellDef>Payers Phone </mat-header-cell>
+    <mat-cell *matCellDef="let payment"> {{payment.payers_phone}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="narration">
+    <mat-header-cell *matHeaderCellDef> Narration </mat-header-cell>
+    <mat-cell *matCellDef="let payment"> {{payment.narration}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="amount">
+    <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+    <mat-cell *matCellDef="let payment"> {{payment.amount}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="pay_date">
+    <mat-header-cell *matHeaderCellDef> Pay Date </mat-header-cell>
+    <mat-cell *matCellDef="let payment"> {{payment.pay_date}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="payment_number">
+    <mat-header-cell *matHeaderCellDef> Payment Number </mat-header-cell>
+    <mat-cell *matCellDef="let payment"> {{payment.payment_number}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+</div>
+<br>
+<button mat-raised-button class="btn btn-primary">Download pdf</button>
 

@@ -10,3 +10,7 @@ a { cursor: pointer }
 body{
     margin: 0;
 }
+
+mat-header-cell {
+    color: #EF5924;
+}

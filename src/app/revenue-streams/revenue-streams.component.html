@@ -1,27 +1,43 @@
 <h2>Revenue Streams</h2>
 
-<table class=" table table-bordered">
-        <thead>
-            <tr>
-                <th>revenueStream Number</th>
-                <th>Name</th>
-                <th>Revenue Description</th>
-                <th>Merchant</th>
-                <th>Price</th>
-                <th>Industries</th>
-    
-            </tr>
-        </thead>
-        <tbody *ngFor='let revenueStream of revenueStreams'>
-            <tr >
-                <td>{{revenueStream.id}}</td>
-                <td>{{revenueStream.name}}</td>
-                <td>{{revenueStream.revenue_description}}</td>
-                <td>{{ revenueStream.Merchant_Owner }}</td>
-                <td>{{revenueStream.price}}</td>
-                <td>{{revenueStream.Industrys}}</td>
-            </tr>
-        </tbody>
-    </table>
-    
-    
+<div class="mat-elevation-z8">
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> revenue Stream number </mat-header-cell>
+    <mat-cell *matCellDef="let RevStream"> {{RevStream.id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let RevStream"> {{RevStream.name}} </mat-cell>
+  </ng-container>
+  
+  <ng-container matColumnDef="revenue_description">
+    <mat-header-cell *matHeaderCellDef> Revenue Description </mat-header-cell>
+    <mat-cell *matCellDef="let RevStream"> {{RevStream.revenue_description}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Merchant_Owner">
+    <mat-header-cell *matHeaderCellDef> Merchant Owner </mat-header-cell>
+    <mat-cell *matCellDef="let RevStream"> {{RevStream.Merchant_Owner}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+    <mat-cell *matCellDef="let RevStream"> {{RevStream.price}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Industrys">
+    <mat-header-cell *matHeaderCellDef> Industries </mat-header-cell>
+    <mat-cell *matCellDef="let RevStream"> {{RevStream.Industrys}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+</div>
+<br>
+<button mat-raised-button class="btn btn-primary">Download pdf</button>
+

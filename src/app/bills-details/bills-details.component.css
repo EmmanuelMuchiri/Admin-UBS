@@ -13,6 +13,9 @@ button {
   width: 10%;
 }  
 
+mat-header-cell {
+  color: #EF5924;
+}
 
 
 

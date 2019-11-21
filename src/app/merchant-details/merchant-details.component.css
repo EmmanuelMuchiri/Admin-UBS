@@ -1,8 +1,18 @@
-table {
-    width: 90%;
-    margin: 20px auto;
-  }
+mat-table {
+  width: 90%;
+  margin: 20px auto;
+  font-size: 1em;
+}
 
 h2 {
-  text-align: center;
+text-align: center;
+}
+
+button {
+margin-left: 80px;
+width: 10%;
+}  
+
+mat-header-cell {
+  color: #EF5924;
 }

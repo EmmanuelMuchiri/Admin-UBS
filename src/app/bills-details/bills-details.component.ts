@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataSource } from '@angular/cdk/collections';
-import { Bills } from '../postdataObj'
+import { Bills } from '../postdataObj';
 import { ApiService } from '../api.service';
 
 @Component({
