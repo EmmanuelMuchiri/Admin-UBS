@@ -8,7 +8,7 @@ import { User } from '../_models';
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
 
-  loginUrl = 'https://jambopay.herokuapp.com/api/login/';
+  loginUrl = 'https://jambopay.herokuapp.com/api/Login/';
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
 

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable,  throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-import { Bill, Bills } from './postdataObj';
+import { Bill, Bills, Merchant, RevenueStreams, Payment } from './postdataObj';
 
 
 @Injectable({
@@ -34,8 +34,8 @@ export class ApiService {
   } 
 
 
-  getUsers(){
-    return this.http.get<any[]>(this.url, this.httpOptions)
+  getUsers(): Observable<Merchant[]>{
+    return this.http.get<Merchant[]>(this.url, this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -50,16 +50,16 @@ export class ApiService {
     )
   }
 
-  getPayments(){
-    return this.http.get<any[]>(this.paymentsUrl, this.httpOptions)
+  getPayments(): Observable<Payment[]>{
+    return this.http.get<Payment[]>(this.paymentsUrl, this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
     )
   }
 
-  getRevenueStreams(){
-    return this.http.get<any[]>(this.revenueStreamsUrl, this.httpOptions)
+  getRevenueStreams(): Observable<RevenueStreams[]>{
+    return this.http.get<RevenueStreams[]>(this.revenueStreamsUrl, this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)

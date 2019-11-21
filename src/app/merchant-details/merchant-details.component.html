@@ -1,30 +1,59 @@
-<table class=" table table-bordered">
-    <thead>
-        <tr>
-            <th>Merchant Number</th>
-            <th>Business Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th>Merchant Id</th>
-            <th>Industry</th>
-            <th>Physical_address</th>
-            <th>Town</th>
-            <th>Join Date</th>
-        </tr>
-    </thead>
-    <tbody *ngFor='let user of users'>
-        <tr >
-            <td>{{user.id}}</td>
-            <td>{{user.Business_name}}</td>
-            <td>{{user.Email}}</td>
-            <td>{{user.Phone_number}}</td>
-            <td>{{user.merchant_id}}</td>
-            <td>{{user.Industry}}</td>
+<h2>Merchant Details</h2>
 
-            <td>{{user.Physical_address}}</td>
-            <td>{{user.Town}}</td>
-            <td>{{user.join_date}}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="mat-elevation-z8">
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>  Id </mat-header-cell>
+    <mat-cell *matCellDef="let merchant"> {{merchant.id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Business_name">
+    <mat-header-cell *matHeaderCellDef> Business Name </mat-header-cell>
+    <mat-cell *matCellDef="let merchant"> {{merchant.Business_name}} </mat-cell>
+  </ng-container>
+  
+  <ng-container matColumnDef="Email">
+    <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+    <mat-cell *matCellDef="let merchant"> {{merchant.Email}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Phone_number">
+    <mat-header-cell *matHeaderCellDef> Phone </mat-header-cell>
+    <mat-cell *matCellDef="let merchant"> {{merchant.Phone_number}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="merchant_id">
+    <mat-header-cell *matHeaderCellDef> Merchant Id </mat-header-cell>
+    <mat-cell *matCellDef="let merchant"> {{merchant.merchant_id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Industry">
+    <mat-header-cell *matHeaderCellDef> Industry </mat-header-cell>
+    <mat-cell *matCellDef="let merchant"> {{merchant.Industry}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Physical_address">
+    <mat-header-cell *matHeaderCellDef> Physical Address </mat-header-cell>
+    <mat-cell *matCellDef="let merchant"> {{merchant.Physical_address}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Town">
+    <mat-header-cell *matHeaderCellDef> Town </mat-header-cell>
+    <mat-cell *matCellDef="let merchant"> {{merchant.Town}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="join_date">
+    <mat-header-cell *matHeaderCellDef> Join Date </mat-header-cell>
+    <mat-cell *matCellDef="let merchant"> {{merchant.join_date}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+</div>
+<br>
+
+<button mat-raised-button class="btn btn-primary">Download pdf</button>
 

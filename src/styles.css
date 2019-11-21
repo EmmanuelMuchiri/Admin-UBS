@@ -6,3 +6,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 a { cursor: pointer }
 
 /* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
+body{
+    margin: 0;
+}
+
+mat-header-cell {
+    color: #EF5924;
+}

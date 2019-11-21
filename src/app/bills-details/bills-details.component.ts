@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../api.service';
 import { Observable } from 'rxjs';
 import { DataSource } from '@angular/cdk/collections';
-import { Bills } from '../postdataObj'
+import { Bills } from '../postdataObj';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-bills-details',
@@ -11,20 +11,16 @@ import { Bills } from '../postdataObj'
 })
 
 export class BillsDetailsComponent implements OnInit {
+  
   dataSource = new BillsDataSource(this.apiservice);
-  displayedColumns = ['id','Revstreams','customer_name','customer_email','narration','subtotal','quantity','status','bill_id']
+  displayedColumns = ['bill_id','Revstreams','customer_name','customer_phone','narration','subtotal','quantity','status', 'generated_by'];
 
 
-  constructor( private apiservice: ApiService) {
+  constructor( private apiservice: ApiService) { }
+
+  ngOnInit(){ 
 
   }
-
-  ngOnInit(){
-
-    // return this.apiservice.getBills()
-    // .subscribe(data => this.bills = data);
-  }
-
 }
 
 export class BillsDataSource extends DataSource<any>{
@@ -37,4 +33,5 @@ connect():Observable<Bills[]>{
 }
 
 disconnect() {}
+
 }
