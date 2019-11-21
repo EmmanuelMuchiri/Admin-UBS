@@ -6,18 +6,18 @@
     <mat-toolbar><a><img width="70%;" src="https://www.jambopay.com/img/logo.png" alt=""></a></mat-toolbar>
     <mat-nav-list>
       <br>
-      <a mat-list-item href="#"> Home </a>
-      <a mat-list-item href="#"> Merchant Details </a>
-      <a mat-list-item href="#"> Bills Details </a>
-      <a mat-list-item href="#"> Revenue Streams </a>
-      <a mat-list-item href="#"> Payments Details </a>
-      <a mat-list-item href="#"> Generate Bill </a>
-      <a mat-list-item href="#"> Logout </a>
+      <a mat-list-item href="#"> Home </a><br>
+      <a class="nav-link" routerLink="merchant-details" routerLinkActive="active">Merchant Details</a><br>
+      <a class="nav-link" routerLink="bills-details" routerLinkActive="active">Bills Details</a><br>
+      <a class="nav-link" routerLink="revenue-streams" routerLinkActive="active">Revenue Streams</a><br>
+      <a class="nav-link" routerLink="payments-details" routerLinkActive="active">Payments Details</a><br>
+      <a class="nav-link" routerLink="generate-bill" routerLinkActive="active">Generate Bill</a><br>
+      <a *ngIf="currentUser" class="nav-item nav-link" (click)="logout()">Logout</a><br>
 
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -29,5 +29,9 @@
       <span>Admin Panel</span>
     </mat-toolbar>
     <!-- Add Content Here -->
+    <main>
+      
+        <router-outlet></router-outlet>
+      </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
