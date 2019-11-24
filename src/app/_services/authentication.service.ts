@@ -1,16 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { retry, catchError } from 'rxjs/operators';
+import { Bill, Bills, Merchant, RevenueStreams, Payment } from '../postdataObj';
+
 
 import { User } from '../_models';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
 
-  loginUrl = 'https://jambopay.herokuapp.com/api/Login/';
+    url: string = 'https://jambopay.herokuapp.com/api/GetMerchants/';
+
+    loginUrl = 'https://jambopay.herokuapp.com/api/Login/';
+
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
+
 
     constructor(private http: HttpClient) {
         this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
@@ -35,5 +42,13 @@ export class AuthenticationService {
         // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
+    }
+
+    getUsers(): Observable<Merchant[]> {
+        return this.http.get<Merchant[]>(this.url)
+            .pipe(
+                retry(1),
+                //   catchError(this.handleError)
+            )
     }
 }

@@ -16,7 +16,6 @@ import { RevenueStreamsComponent } from './revenue-streams/revenue-streams.compo
 // Forms module
 import { FormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
-import { GenerateBillComponent } from './generate-bill/generate-bill.component';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
@@ -29,6 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { AppInterceptorService } from './app-interceptor.service'; 
 
 @NgModule({
   declarations: [
@@ -38,7 +38,6 @@ import { MatListModule } from '@angular/material/list';
     MerchantDetailsComponent,
     GetPaymentsComponent,
     RevenueStreamsComponent,
-    GenerateBillComponent,
     LoginComponent,
     MainNavComponent
   ],
@@ -62,6 +61,7 @@ import { MatListModule } from '@angular/material/list';
   providers: [
     ApiService,
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AppInterceptorService, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],

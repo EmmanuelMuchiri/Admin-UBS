@@ -4,6 +4,7 @@ import { ApiService } from '../api.service';
 import { Merchant } from '../postdataObj';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs';
+import { AuthenticationService } from '../_services';
 
 
 @Component({
@@ -13,11 +14,11 @@ import { Observable } from 'rxjs';
 })
 export class MerchantDetailsComponent implements OnInit {
 
-  dataSource = new MerchantDataSource(this.apiservice);
+  dataSource = new MerchantDataSource(this.authenticationService);
   displayedColumns = ['id', 'Business_name', 'Email', 'Phone_number', 'merchant_id', 'Industry', 'Physical_address', 'Town', 'join_date'];
 
 
-  constructor(private apiservice:ApiService){
+  constructor(private authenticationService:AuthenticationService){
 
   }
 
@@ -30,12 +31,12 @@ export class MerchantDetailsComponent implements OnInit {
 }
 
   export class MerchantDataSource extends DataSource<any>{
-    constructor(private apiservice:ApiService){
+    constructor(private authenticationService:AuthenticationService){
       super();
   }
   
   connect():Observable<Merchant[]>{
-    return this.apiservice.getUsers()
+    return this.authenticationService.getUsers()
   }
   
   disconnect() {}

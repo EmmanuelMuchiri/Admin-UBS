@@ -11,7 +11,7 @@ import { Bill, Bills, Merchant, RevenueStreams, Payment } from './postdataObj';
 
 
 export class ApiService {
-  url : string='https://jambopay.herokuapp.com/api/GetMerchants/';
+  // url : string='https://jambopay.herokuapp.com/api/GetMerchants/';
   
   billUrl: string ='https://jambopay.herokuapp.com/api/BillsDetails/';
 
@@ -21,7 +21,6 @@ export class ApiService {
 
   revenueStreamsUrl: string = 'https://jambopay.herokuapp.com/api/GetRevenueStreams/';
 
-  generateBillUrl: string = 'http://jambopay.herokuapp.com/api/GenerateBill/';
 
 
   constructor(private http:HttpClient) { }
@@ -34,13 +33,13 @@ export class ApiService {
   } 
 
 
-  getUsers(): Observable<Merchant[]>{
-    return this.http.get<Merchant[]>(this.url, this.httpOptions)
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
-  }
+  // getUsers(): Observable<Merchant[]>{
+  //   return this.http.get<Merchant[]>(this.url, this.httpOptions)
+  //   .pipe(
+  //     retry(1),
+  //     catchError(this.handleError)
+  //   )
+  // }
 
   getBills(): Observable<Bills[]>{
     return this.http.get<Bills[]>(this.billUrl)
@@ -65,15 +64,6 @@ export class ApiService {
       catchError(this.handleError)
     )
   }
-
-  generateBill(bill): Observable<Bill> {
-    return this.http.post<Bill>(this.generateBillUrl, JSON.stringify(bill), this.httpOptions)
-    .pipe(
-      retry(1),
-      catchError(this.handleError)
-    )
-  }
-
 
   handleError(error) {
     let errorMessage = '';
