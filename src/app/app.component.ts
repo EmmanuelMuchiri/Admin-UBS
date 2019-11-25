@@ -12,11 +12,6 @@ import { User } from './_models';
 export class AppComponent {
   currentUser: User;
 
-  navbarOpen = false;
-
-  toggleNavbar() {
-  this.navbarOpen = !this.navbarOpen;
-}
 constructor(
   private router: Router,
   private authenticationService: AuthenticationService

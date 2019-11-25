@@ -29,6 +29,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { AppInterceptorService } from './app-interceptor.service'; 
+import { ExportAsModule } from 'ngx-export-as';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +41,7 @@ import { AppInterceptorService } from './app-interceptor.service';
     GetPaymentsComponent,
     RevenueStreamsComponent,
     LoginComponent,
-    MainNavComponent
+    MainNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,8 +57,8 @@ import { AppInterceptorService } from './app-interceptor.service';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule   
-  
+    MatListModule,   
+    // ExportAsModule
   ],
   providers: [
     ApiService,

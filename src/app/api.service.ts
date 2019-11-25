@@ -17,8 +17,6 @@ export class ApiService {
 
   paymentsUrl: string = 'https://jambopay.herokuapp.com/api/GetPayments/' 
   
-  // ('Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTczODI4NDY3LCJqdGkiOiJhMTU0YTY4NGM1ZjY0NGI5YWFiMTZkYzViYTVkNDI0NiIsInVzZXJfaWQiOjF9.yd8cOZ0BZ6u01hCDBq0uOae-rJqESOF8dGa_a8bytRk');
-
   revenueStreamsUrl: string = 'https://jambopay.herokuapp.com/api/GetRevenueStreams/';
 
 

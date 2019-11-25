@@ -6,7 +6,6 @@ import { MerchantDetailsComponent } from './merchant-details/merchant-details.co
 import { GetPaymentsComponent } from './get-payments/get-payments.component';
 import { RevenueStreamsComponent } from './revenue-streams/revenue-streams.component';
 import { LoginComponent } from './login';
-
 import { AuthGuard } from './_helpers';
 
 const routes: Routes = [

@@ -14,7 +14,7 @@ export class AppInterceptorService  implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     const headers = new HttpHeaders({
-      'Authorization': 'dragon'
+      'Authorization': ''
     });
     
 const clone = req.clone({
